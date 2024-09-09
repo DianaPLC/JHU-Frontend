@@ -1,0 +1,120 @@
+html {
+  --theme: #4281FF;
+  --theme-light: #E0EBFF;
+  --theme-dark: #191D24;
+  --error-light: #EBA200;
+  --error-dark: #413A2B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+}
+
+h1 {
+  color: var(--theme);
+  text-align: center;
+  padding-left: 1rem;
+  font-size: 1.75rem;
+}
+
+section {
+  width: 33%;
+  float: left;
+}
+
+p {
+  margin: 0;
+  padding: 3rem 1rem 1rem;
+}
+
+section div {
+  position: relative;
+  background-color: var(--theme-dark);
+  margin: 1em;
+  border: 1px solid black;
+  color: var(--theme-light);
+  max-height: 200px;
+  overflow: hidden;
+}
+
+section div:hover {
+  cursor: ns-resize;
+  overflow: auto;
+}
+
+section h2 {
+  margin: 0;
+  border: 1px solid black;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  padding: .25em 3em;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 1.25rem;
+}
+
+h2.blue {
+  color: var(--theme-light);
+  background-color: var(--theme);
+}
+
+h2.orange {
+  color: var(--theme-dark);
+  background-color: var(--error-light)
+}
+
+h2.light {
+  color: var(--theme);
+  background-color: var(--theme-light)
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  section {
+    width: 50%;
+  }
+
+  section:nth-of-type(3) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    text-align: left;
+    font-size: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  p {
+    padding: 1rem;
+  }
+
+  section h2 {
+    width: 100%;
+    text-align: center;
+    position: static;
+  }
+
+  .mobile-only {
+    display: revert;
+  }
+
+  .non-mobile {
+    display: none;
+  }
+}
