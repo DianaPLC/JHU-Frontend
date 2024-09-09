@@ -1,4 +1,2 @@
-# JHU-Frontend
-Course Work for EN.605.787
-
+# Front-End Development Coursework
 - [Module 2 Solution](/mod2_solution/index.html)
