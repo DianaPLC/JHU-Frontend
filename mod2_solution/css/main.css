@@ -2,8 +2,8 @@ html {
   --theme: #4281FF;
   --theme-light: #E0EBFF;
   --theme-dark: #191D24;
-  --error-light: #EBA200;
-  --error-dark: #413A2B;
+  --highlight-light: #EBA200;
+  --highlight-dark: #413A2B;
 }
 
 * {
@@ -12,14 +12,18 @@ html {
 
 body {
   margin: 0;
+  padding: 0 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
+}
+
+header {
+  padding: 1rem 0.5rem;
 }
 
 h1 {
   color: var(--theme);
   text-align: center;
-  padding-left: 1rem;
   font-size: 1.75rem;
 }
 
@@ -36,7 +40,7 @@ p {
 section div {
   position: relative;
   background-color: var(--theme-dark);
-  margin: 1em;
+  margin: 0.5rem;
   border: 1px solid black;
   color: var(--theme-light);
   max-height: 200px;
@@ -66,8 +70,8 @@ h2.blue {
 }
 
 h2.orange {
-  color: var(--theme-dark);
-  background-color: var(--error-light)
+  color: var(--highlight-dark);
+  background-color: var(--highlight-light)
 }
 
 h2.light {
