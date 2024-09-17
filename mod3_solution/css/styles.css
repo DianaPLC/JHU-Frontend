@@ -1,0 +1,97 @@
+html {
+  --theme: #4281FF;
+  --theme-light: #E0EBFF;
+  --theme-dark: #191D24;
+  --highlight-light: #EBA200;
+  --highlight-dark: #413A2B;
+}
+
+body {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 17px;
+  background-color: var(--theme-light);
+}
+
+h2 {
+  color: var(--theme);
+}
+
+a, a:visited {
+  color: var(--theme);
+}
+
+a.light:hover {
+  color: var(--theme-light);
+}
+
+a.light:active {
+  color: var(--highlight-light);
+}
+
+div.box {
+  background-color: var(--theme-dark);
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid black;
+  color: var(--theme-light);
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: var(--theme);
+  border-radius: 0;
+  border: none;
+}
+
+.navbar-brand {
+  height: unset;
+  padding: 0 15px 5px;
+}
+
+.navbar-brand h1 {
+  color: var(--theme-light);
+  font-size: min(3.5vw, 50px);
+}
+
+.navbar-toggle {
+  margin-top: 2vw;
+}
+
+.navbar .navbar-toggle {
+  border-color: var(--theme-light);
+}
+
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: var(--highlight-light);
+  border-color: var(--highlight-dark)
+}
+
+.navbar .navbar-toggle:hover .icon-bar,
+.navbar .navbar-toggle:focus .icon-bar {
+  background-color: var(--highlight-dark);
+}
+
+.navbar .navbar-toggle:active {
+  background-color: var(--theme-light);
+}
+
+.navbar .navbar-toggle .icon-bar {
+  background-color: var(--theme-light);
+}
+
+.navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar-nav li a {
+  color: var(--theme-light);
+  border-top: 1px solid var(--theme-light);
+}
+
+.navbar-nav li a:hover {
+  background-color: var(--theme-dark);
+}
+/* End Navbar Styling */
