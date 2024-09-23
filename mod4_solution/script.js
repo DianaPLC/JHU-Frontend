@@ -63,4 +63,49 @@ WARNING!!! WARNING!!!
       helloSpeaker.speak(names[n])
     }
   }
+
+  /**
+   * Callback to map a string name to the appropriate statement
+   * @param {string} name the string name
+   * @returns a goodbye statement for names starting with "j" or a
+   *   hello statement otherwise
+   */
+  var getStatement = function(name) {
+    var firstLetter = name.toLowerCase().charAt(0)
+    if (firstLetter == 'j') {
+      return byeSpeaker.speakSimple(name);
+    }
+    return helloSpeaker.speakSimple(name);
+  }
+  // Map name array to statements
+  var statementList = names.map(getStatement);
+  // Print each statement in the mapped list
+  for (var statement of statementList) {
+    console.log(statement);
+  }
+
+  /**
+   * Callback to accumulate statements into a hello list and a bye list
+   * @param {object} listAccumulator an object holding the two lists
+   * @param {string} currentName the name to build a statement for
+   * @returns the listAccumulator with the correct statement for
+   *   currentName added to the appropriate list
+   */
+  function statementReducer(listAccumulator, currentName) {
+    var firstLetter = currentName.toLowerCase().charAt(0)
+    if (firstLetter == 'j') {
+      listAccumulator.bye.push(byeSpeaker.speakSimple(currentName));
+    } else {
+      listAccumulator.hello.push(helloSpeaker.speakSimple(currentName));
+    }
+    return listAccumulator;
+  }
+  // reduce name array to build the two-list object
+  var reducedStatements = names.reduce(statementReducer, {hello: [], bye: []})
+  // print each element of both statement lists to console
+  for (var list in reducedStatements) {
+    for (var statement of reducedStatements[list]) {
+      console.log(statement);
+    }
+  }
 })();
