@@ -229,6 +229,22 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* ABOUT PAGE */
+p.about-rating {
+  max-width: max-content;
+  margin: 0 auto;
+  font-size: 2em;
+  text-align: center;
+}
+p.about-rating .fa {
+  color: #f6b319;
+  padding-right: 2px;
+}
+p.about-rating .nowrap {
+  white-space: nowrap;
+}
+/* END ABOUT PAGE*/
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
