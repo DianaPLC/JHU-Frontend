@@ -1,0 +1,83 @@
+html {
+  --theme: #3A6B4B;
+  --theme-light: #EEF7F3;
+  --theme-dark: #412E2E;
+  --highlight: #963B38;
+  --error: #EB1109;
+  --confirm: #079739;
+}
+
+body {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 17px;
+  background-color: var(--theme-light);
+  color: var(--theme-dark);
+}
+
+h1 {
+  color: var(--theme);
+}
+
+div.content {
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p.note {
+  font-style: italic;
+  font-size: 0.8em;
+  margin-bottom: 0;
+}
+
+p.note::before {
+  content: "Note: "
+}
+
+input {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0;
+  padding: .5em;
+  border: 2px solid var(--theme-dark);
+}
+
+button {
+  font-family: "SUSE", sans-serif;
+  border: none;
+  border-radius: 0;
+  background-color: var(--theme);
+  color: var(--theme-light);
+  font-weight: 700;
+  font-size: 1.15em;
+  padding: .5em;
+  margin-top: 1em;
+}
+
+button:hover, button:focus,
+input:focus {
+  box-shadow: 3px 3px var(--highlight);
+  outline: none;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+input.red {
+  border: 2px solid var(--error);
+}
+
+input.green {
+  border: 2px solid var(--confirm);
+}
+
+div.red {
+  color: var(--error);
+}
+
+div.green {
+  color: var(--confirm);
+}

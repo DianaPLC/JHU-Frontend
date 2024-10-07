@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+  <head>
+    <title>Module 6 Solution</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="content">
+      <h1>Lunch Checker</h1>
+      <p>Enter a comma-separated list of the foods you usually eat for lunch.</p>
+      <p class="note">An empty item, eg. ",," or ", ," will not be counted.</p>
+      <div ng-controller="LunchCheckController">
+        <input type="text" ng-model="list" ng-class="feedback">
+        <div ng-class="feedback">{{message}}</div>
+        <button ng-click="checkList()">Check If Too Much</button>
+      </div>
+      <script src="js/angular.min.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>

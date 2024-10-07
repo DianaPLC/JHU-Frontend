@@ -3,3 +3,4 @@
 - [Module 3 Solution](/mod3_solution/index.html)
 - [Module 4 Solution](/mod4_solution/index.html)
 - [Module 5 Solution](/mod5_solution/index.html)
+- [Module 6 Solution](/mod6_solution/index.html)
