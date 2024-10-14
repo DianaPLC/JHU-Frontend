@@ -1,17 +1,17 @@
 html {
-  --theme: #3A6B4B;
-  --theme-light: #EEF7F3;
-  --theme-dark: #412E2E;
-  --highlight: #963B38;
-  --error: #EB1109;
-  --confirm: #079739;
+  --theme: #24492D;
+  --theme-light: #B7DFBF;
+  --theme-dark: #221F1B;
+  --highlight: #996DDB;
+  --highlight-dark: #514A5C;
+  --highlight-2: #DBA96B;
 }
 
 body {
   font-family: "SUSE", sans-serif;
   font-optical-sizing: auto;
   font-size: 17px;
-  background-color: var(--theme-light);
+  background-color: var(--highlight-2);
   color: var(--theme-dark);
 }
 
@@ -19,65 +19,88 @@ h1 {
   color: var(--theme);
 }
 
-div.content {
-  width: max-content;
-  margin: 0 auto;
+h1, h2 {
   text-align: center;
 }
 
-p.note {
-  font-style: italic;
+div.col-2 {
+  width: 50%;
+  float: left;
+}
+
+div.col-2 > div {
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--theme-light);
+  box-shadow: 3px 3px var(--highlight-dark);
+  border-radius: 2em;
+}
+
+div.message {
+  background-color: var(--highlight-dark);
+  color: var(--theme-light);
+  text-align: center;
+  font-weight: 700;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+div.list-item {
+  background-color: var(--highlight-2);
+  border-radius: 2em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+div.list-item.grid {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+}
+
+div.list-item.grid .quantity {
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  margin-top: -1em;
+}
+
+div.list-item .quantity label {
   font-size: 0.8em;
-  margin-bottom: 0;
+  font-style: italic;
 }
 
-p.note::before {
-  content: "Note: "
-}
-
-input {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 0;
-  padding: .5em;
+div.list-item .quantity input {
+  width: 3em;
+  padding: 0.5em;
+  border-radius: 2em;
   border: 2px solid var(--theme-dark);
 }
 
-button {
+div.list-item p {
+  margin: 0 1em;
+  font-weight: 700;
+}
+
+div.list-item button {
   font-family: "SUSE", sans-serif;
   border: none;
-  border-radius: 0;
+  border-radius: 2em;
   background-color: var(--theme);
   color: var(--theme-light);
   font-weight: 700;
-  font-size: 1.15em;
-  padding: .5em;
-  margin-top: 1em;
+  font-size: 1.1em;
+  padding: .75em;
 }
 
-button:hover, button:focus,
+div.list-item button:hover,
+div.list-item button:focus,
 input:focus {
   box-shadow: 3px 3px var(--highlight);
   outline: none;
 }
 
-button:active {
+div.list-item button:active {
+  background-color: var(--highlight-dark);
   box-shadow: none;
-}
-
-input.red {
-  border: 2px solid var(--error);
-}
-
-input.green {
-  border: 2px solid var(--confirm);
-}
-
-div.red {
-  color: var(--error);
-}
-
-div.green {
-  color: var(--confirm);
 }
