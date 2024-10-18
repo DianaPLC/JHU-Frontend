@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+  <head>
+    <title>Module 7 Solution</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+    <div class="col-2">
+      <div ng-controller="ToBuyController as toBuy">
+        <h2>To Buy</h2>
+        <div ng-if="toBuy.list.length === 0" class="message">
+          Everything is bought!
+        </div>
+        <div ng-repeat="item in toBuy.list" class="list-item grid">
+          <div class="quantity">
+            <label for="quantity-{{$index}}">Quantity</label>
+            <input name="quantity-{{$index}}" id="quantity-{{$index}}" type="number" min="1" step="1" ng-model="item.quantity" />
+          </div>
+          <p>Buy {{ item.quantity }} {{ item.name }}</p>
+          <button ng-click="toBuy.buy($index)">Bought</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div ng-controller="AlreadyBoughtController as bought">
+        <h2>Already Bought</h2>
+        <div ng-if="bought.list.length === 0" class="message">
+          Nothing bought yet
+        </div>
+        <div ng-repeat="item in bought.list" class="list-item">
+          <p>
+            Bought {{ item.quantity }} of {{ item.name }} for total price of
+            {{ item.pricePerItem * item.quantity | customCurrency }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
