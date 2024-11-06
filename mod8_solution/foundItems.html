@@ -1,0 +1,5 @@
+<div class="message" ng-if="narrowDown.empty">Nothing found</div>
+<div class="list-item" ng-repeat="item in narrowDown.found">
+  <span><span class="strong">{{ item.name }} ({{ item.short_name }})</span> {{ item.description }}</span>
+  <button ng-click="narrowDown.onRemove({index: $index});">Don't want this one!</button>
+</div>
