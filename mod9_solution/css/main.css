@@ -1,0 +1,130 @@
+html {
+  --theme: #24492D;
+  --theme-light: #B7DFBF;
+  --theme-dark: #221F1B;
+  --highlight: #996DDB;
+  --highlight-dark: #514A5C;
+  --highlight-2: #DBA96B;
+}
+
+body {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 17px;
+  background-color: var(--theme-light);
+  color: var(--theme-dark);
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--theme);
+}
+
+h1, h2 {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .25em .5em;
+}
+
+div.message {
+  background-color: var(--highlight-dark);
+  color: var(--theme-light);
+  text-align: center;
+  font-weight: 700;
+  padding: 1em;
+  border-radius: 2em;
+  margin-bottom: 2em;
+}
+
+div.items {
+  background-color: var(--highlight-dark);
+  border-radius: 2em;
+  padding: 1em;
+}
+
+.list-item {
+  background-color: var(--highlight-2);
+  border-radius: 2em;
+  margin-bottom: 1em;
+  padding: 1em 1.5em;
+}
+
+div.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+  align-items: baseline;
+}
+
+a.list-item {
+  text-decoration: none;
+  font-weight: 700;
+  width: max-content;
+  color: var(--theme-dark);
+}
+
+div.categories a.list-item {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+input {
+  display: block;
+  width: 50%;
+  margin: 0 auto 1em;
+  border-radius: 0;
+  padding: .5em;
+  border: 2px solid var(--theme-dark);
+}
+
+button {
+  font-family: "SUSE", sans-serif;
+  border: none;
+  border-radius: 2em;
+  background-color: var(--theme);
+  color: var(--theme-light);
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: .25em .5em;
+}
+
+button.back-button {
+  float: left;
+  margin-top: 2em;
+}
+
+button.back-button::before {
+  content: '< ';
+}
+
+h1[ui-sref]:hover {
+  background-color: var(--highlight);
+  cursor: pointer;
+}
+
+a.list-item:hover,
+a.list-item:focus,
+button:hover,
+button:focus,
+input:focus {
+  box-shadow: 3px 3px var(--highlight);
+  outline: none;
+}
+
+a.list-item:active,
+button:active {
+  color: var(--theme-light);
+  background-color: var(--highlight-dark);
+  box-shadow: none;
+}

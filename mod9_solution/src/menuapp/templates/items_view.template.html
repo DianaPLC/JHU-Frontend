@@ -1,0 +1,8 @@
+<button ui-sref="categories" class="back-button">All Categories</button>
+<h2>Menu Items: {{ itemCtrl.itemList.category.name }}</h2>
+<div ng-if="itemCtrl.itemList.category.special_instructions" class="message">
+  {{ itemCtrl.itemList.category.special_instructions }}
+</div>
+<div class="items">
+  <items item-list="itemCtrl.itemList"></items>
+</div>
