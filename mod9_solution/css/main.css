@@ -113,6 +113,10 @@ h1[ui-sref]:hover {
   cursor: pointer;
 }
 
+.h1-active {
+  border-bottom: 10px solid var(--highlight);
+}
+
 a.list-item:hover,
 a.list-item:focus,
 button:hover,
