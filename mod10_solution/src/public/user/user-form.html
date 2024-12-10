@@ -1,0 +1,78 @@
+<div class="user-info container-fluid">
+  <h2 class="text-center">Sign Up For Our Newsletter</h2>
+  <form name="userForm" novalidate>
+    <label for="firstName" class="col-xxs-12 col-xs-4">First Name:</label>
+    <input
+      type="text"
+      name="firstName"
+      ng-model="newUserCtrl.user.firstName"
+      required
+      class="col-xxs-12 col-xs-8"
+    />
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.firstName.$invalid && userForm.firstName.$touched">
+      First name is required.
+    </span>
+    <label for="lastName" class="col-xxs-12 col-xs-4">Last Name:</label>
+    <input
+      type="text"
+      name="lastName"
+      ng-model="newUserCtrl.user.lastName"
+      required
+      class="col-xxs-12 col-xs-8"
+    />
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.lastName.$invalid && userForm.lastName.$touched">
+      Last name is required.
+    </span>
+    <label for="email" class="col-xxs-12 col-xs-4">Email Address:</label>
+    <input
+      type="email"
+      name="email"
+      ng-model="newUserCtrl.user.email"
+      required
+      class="col-xxs-12 col-xs-8"
+    />
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.email.$error.required && userForm.email.$touched">
+      Email is required.
+    </span>
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.email.$error.email && userForm.email.$touched">
+      Email must be in valid email format.
+    </span>
+    <label for="phone" class="col-xxs-12 col-xs-4">Phone Number:</label>
+    <input
+      type="text"
+      name="phone"
+      ng-model="newUserCtrl.user.phone"
+      pattern="\(?(\d{3})\)?[\s,-]?(\d{3})[\s,-]?(\d{4})"
+      required
+      class="col-xxs-12 col-xs-8"
+    />
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.phone.$error.required && userForm.phone.$touched">
+      Phone number is required.
+    </span>
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.phone.$error.pattern && userForm.phone.$touched">
+      Must be a valid US phone number.
+    </span>
+    <label for="favDish" class="col-xxs-12 col-xs-4">Favorite Dish:</label>
+    <input
+      type="text"
+      name="favDish"
+      ng-model="newUserCtrl.user.favDish.short_name"
+      required
+      dish
+      class="col-xxs-12 col-xs-8"
+    />
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.favDish.$error.required && userForm.favDish.$touched">
+      Favorite dish is required.
+    </span>
+    <span class="col-xxs-12 col-xs-8 col-xs-offset-4" ng-if="userForm.favDish.$error.dish && userForm.favDish.$touched">
+      No such menu number exists.
+    </span>
+    <button
+      ng-disabled="userForm.$invalid || userForm.$pending"
+      ng-click="newUserCtrl.signUp(userForm)"
+    >Submit</button>
+  </form>
+  <p class="text-center lead" ng-if="newUserCtrl.success">
+    Your information has been saved.
+  </p>
+</div>

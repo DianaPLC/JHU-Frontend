@@ -183,3 +183,72 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+/* USER PAGES */
+.user-info {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.user-info h2 {
+  margin-bottom: 1em;
+}
+
+.user-info a {
+  color: #557c3e;
+  font-weight: 700;
+}
+
+.user-info table.table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.user-info table.table td:first-child {
+  font-weight: 700;
+}
+
+.user-info menu-item .col-md-6 {
+  width: 100%;
+  float: none;
+}
+
+form input {
+  color:#000;
+  margin: 1em 0;
+}
+
+form input.ng-touched.ng-valid {
+  background-color: lightgreen;
+}
+
+form input.ng-touched.ng-invalid {
+  background-color: lightpink;
+}
+
+form label {
+  margin-top: 1.25em;
+  text-align: right;
+}
+
+form button {
+  background-color: #557c3e;
+  font-weight: 700;
+  display: block;
+  margin: 1em auto;
+}
+
+form button:disabled {
+  background-color: #cccccc;
+  color: #777777;
+}
+
+@media (max-width: 479px) {
+  form label {
+    text-align: left;
+  }
+
+  form input {
+    margin: 0;
+  }
+}
+/* END USER PAGES */

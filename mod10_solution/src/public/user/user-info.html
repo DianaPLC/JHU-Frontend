@@ -1,0 +1,18 @@
+<div class="user-info">
+  <h2 class="text-center">Your Information</h2>
+  <div ng-if="userCtrl.user.enrolled">
+    <table class="table">
+      <tr><td>First Name</td><td>{{ userCtrl.user.firstName }}</td></tr>
+      <tr><td>Last Name</td><td>{{ userCtrl.user.lastName }}</td></tr>
+      <tr><td>Email Address</td><td>{{ userCtrl.user.email }}</td></tr>
+      <tr><td>Phone Number</td><td>{{ userCtrl.user.phone }}</td></tr>
+    </table>
+    <h3>Favorite Dish</h3>
+    <menu-item menu-item="userCtrl.user.favDish" 
+              category-short-name="userCtrl.favDishCategory">
+    </menu-item>
+  </div>
+  <div class="text-center lead" ng-if="!userCtrl.user.enrolled">
+    Not Signed Up Yet. <a ui-sref="public.newuser">Sign up Now!</a>
+  </div>
+</div>
