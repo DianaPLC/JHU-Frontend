@@ -7,3 +7,4 @@
 - [Module 7 Solution](/mod7_solution/index.html)
 - [Module 8 Solution](/mod8_solution/index.html)
 - [Module 9 Solution](/mod9_solution/index.html)
+- [Module 10 Solution](/mod10_solution/index.html)
